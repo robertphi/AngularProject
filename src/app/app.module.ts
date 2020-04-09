@@ -1,15 +1,42 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
+import {AppComponent} from './components/app.component';
+import {StoreModule} from '@ngrx/store';
+import {UnitComponent} from './components/unit/unit.component';
+import {RouterModule, Routes} from '@angular/router';
+
+
+const ROUTES: Routes = [
+  {
+    path: '',
+    redirectTo: 'createUnit',
+    pathMatch: 'full'
+  },
+  {
+    path: 'unit',
+    component: UnitComponent
+  },
+  {
+    path: 'createUnit',
+    component: UnitComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'createUnit'
+  },
+
+];
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UnitComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(ROUTES),
     StoreModule.forRoot({}, {})
   ],
   providers: [],
