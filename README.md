@@ -1,3 +1,6 @@
+# WIP Details 
+This is a heavy WIP. Most of the readme is auto-generated from Angular's CLI. For details on what this project aims to do, check the Wiki. 
+
 # AngularProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
