@@ -5,6 +5,9 @@ import {AppComponent} from './components/app.component';
 import {StoreModule} from '@ngrx/store';
 import {UnitComponent} from './components/unit/unit.component';
 import {RouterModule, Routes} from '@angular/router';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {InputTextModule} from 'primeng/inputtext';
+import {InplaceModule} from 'primeng/inplace';
 
 
 const ROUTES: Routes = [
@@ -37,7 +40,11 @@ const ROUTES: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({}, {}),
+    InputTextModule,
+    InputTextareaModule,
+    InputTextModule,
+    InplaceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

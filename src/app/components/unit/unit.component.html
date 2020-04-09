@@ -1,3 +1,31 @@
-<div>
-  This is the unit component
+<div class="ui-fluid">
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <div class="card no-margin">
+        <h1>Unit Details</h1>
+        <div class="ui-g form-group">
+          <div class="ui-g-12 ui-md-2">
+            <label for="input">Unit Name</label>
+          </div>
+          <div class="ui-g-12 ui-md-4">
+            <p-inplace closable="closable" [active]="!editName" [closeIcon]="'pi pi-check'">
+              <span pInplaceDisplay>
+                Archer
+              </span>
+
+              <span pInplaceContent>
+                <input type="text" value="Archer" pInputText>
+              </span>
+            </p-inplace>
+          </div>
+          <div class="ui-g-12 ui-md-2">
+            <label for="textarea">Textarea</label>
+          </div>
+          <div class="ui-g-12 ui-md-4">
+            <textarea [rows]="3" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
