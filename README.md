@@ -1,4 +1,7 @@
-# WIP Details 
+# WIP Details
+This app relies on a back-end, which I've worked on in a separate repo: https://github.com/robertphi/NodeServer
+This app should be running in order for this app to work correctly. 
+
 This is a heavy WIP. Most of the readme is auto-generated from Angular's CLI. For details on what this project aims to do, check the Wiki. 
 
 # AngularProject
