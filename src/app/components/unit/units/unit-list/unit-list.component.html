@@ -1,0 +1,17 @@
+<p-dataView [value]="units" layout="grid">
+  <ng-template let-unit pTemplate="gridItem">
+    <div style="padding:.5em; cursor: pointer" class="ui-g-12 ui-md-3" (click)="clickUnit(unit)">
+      <p-panel [header]="unit.name" [style]="{'text-align':'center'}">
+        <div>{{unit.description}}</div>
+        <hr class="ui-widget-content" style="border-top:0">
+      </p-panel>
+    </div>
+  </ng-template>
+</p-dataView>
+
+
+<pre>
+  {{units|json}}
+</pre>
+
+

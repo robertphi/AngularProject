@@ -1,0 +1,92 @@
+<div class="card no-margin" [formGroup]="unitForm">
+  <h1>Unit Details</h1>
+  <div class="ui-g form-group">
+
+    <div class="ui-g-12 ui-md-12">
+      <div class="ui-g-12 ui-md-2">
+        <label>Unit Name</label>
+      </div>
+      <div class="ui-g-12 ui-md-10">
+        <p-inplace closable="closable" [active]="editMode" [closeIcon]="'pi pi-check'">
+                <span pInplaceDisplay>
+                  {{name.value}}
+                </span>
+
+          <span pInplaceContent>
+                  <input type="text" formControlName="name" pInputText>
+                </span>
+        </p-inplace>
+      </div>
+    </div>
+
+
+    <div class="ui-g-12 ui-md-12">
+      <div class="ui-g-12 ui-md-2">
+        <label>Description</label>
+      </div>
+      <div class="ui-g-12 ui-md-10">
+        <p-inplace closable="closable" [active]="editMode" [closeIcon]="'pi pi-check'">
+                <span pInplaceDisplay>
+                  {{description.value}}
+                </span>
+
+          <span pInplaceContent>
+                  <textarea [rows]="3" [cols]="30" pInputTextarea formControlName="description"></textarea>
+                </span>
+        </p-inplace>
+
+
+      </div>
+    </div>
+
+    <div class="ui-g-12 ui-md-12">
+      <div class="ui-g-12 ui-md-2">
+        <label>Unit Type</label>
+      </div>
+      <div class="ui-g-12 ui-md-2">
+        <p-inplace [closable]="unitType.value?.name!=null" [active]="editMode" [closeIcon]="'pi pi-check'">
+                <span pInplaceDisplay>
+                  {{unitType.value?.name}}
+                </span>
+
+          <span pInplaceContent>
+            <p-dropdown [options]="unitTypes" formControlName="unitType"
+                        [placeholder]="'Select Unit Type'"
+                        optionLabel="name"></p-dropdown>
+          </span>
+        </p-inplace>
+      </div>
+    </div>
+
+
+    <div class="ui-g-12 ui-md-12">
+      <div class="ui-g-12 ui-md-2">
+        <label>Battle Power</label>
+      </div>
+      <div class="ui-g-12 ui-md-2">
+        <p-inplace closable="closable" [active]="editMode" [closeIcon]="'pi pi-check'">
+                <span pInplaceDisplay>
+                  {{battlePower.value}}
+                </span>
+
+          <span pInplaceContent>
+                  <input type="number" formControlName="battlePower" [min]="5" [step]="5" pInputText>
+          </span>
+        </p-inplace>
+      </div>
+    </div>
+
+
+    <div class="center">
+      <button pButton type="submit" label="Save" class="ui-button-rounded p-align-center" (click)="saveUnitData()">
+
+      </button>
+    </div>
+
+
+  </div>
+  <pre>
+      {{unitForm.value|json}}
+    </pre>
+</div>
+

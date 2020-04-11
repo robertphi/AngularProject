@@ -8,45 +8,77 @@ import {RouterModule, Routes} from '@angular/router';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {InputTextModule} from 'primeng/inputtext';
 import {InplaceModule} from 'primeng/inplace';
+import {ReactiveFormsModule} from '@angular/forms';
+import {UnitFormComponent} from './components/unit/unit-form/unit-form.component';
+import {DropdownModule} from 'primeng/dropdown';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DefaultDataServiceConfig, EntityDataModule} from '@ngrx/data';
+import {entityConfig} from './store/entity-metadata';
+import {EffectsModule} from '@ngrx/effects';
+import {HttpClientModule} from '@angular/common/http';
+import {UnitsComponent} from './components/unit/units/units.component';
+import {UnitListComponent} from './components/unit/units/unit-list/unit-list.component';
+import {DataViewModule} from 'primeng/dataview';
+import {PanelModule} from 'primeng/panel';
 
 
 const ROUTES: Routes = [
   {
     path: '',
-    redirectTo: 'createUnit',
+    redirectTo: 'units',
     pathMatch: 'full'
   },
   {
-    path: 'unit',
-    component: UnitComponent
+    path: 'units',
+    component: UnitsComponent
   },
   {
-    path: 'createUnit',
+    path: 'unit/:id',
     component: UnitComponent
   },
   {
     path: '**',
-    redirectTo: 'createUnit'
+    redirectTo: 'units'
   },
 
 ];
 
 
+const defaultDataServiceConfig: DefaultDataServiceConfig = {
+  root: 'http://localhost:3000/',
+  timeout: 3000, // request timeout
+};
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    UnitComponent
+    UnitComponent,
+    UnitFormComponent,
+    UnitsComponent,
+    UnitListComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES),
     StoreModule.forRoot({}, {}),
+    ReactiveFormsModule,
     InputTextModule,
     InputTextareaModule,
     InputTextModule,
-    InplaceModule
+    InplaceModule,
+    DropdownModule,
+    EffectsModule.forRoot([]),
+    EntityDataModule.forRoot(entityConfig),
+    DataViewModule,
+    PanelModule
   ],
-  providers: [],
+  providers: [
+    [{provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig}]
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,8 +3,14 @@ import {Unit} from './Unit';
 
 export class Party {
   leader: Character;
-  units: Unit[];
+  units: UnitGrouping[];
 
   //TODO: clan mapping?
+}
+
+class UnitGrouping {
+  unit: Unit;
+  quantity: number;
+
 
 }

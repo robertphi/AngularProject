@@ -1,0 +1,13 @@
+<div class="ui-g">
+  <div class="ui-g-12">
+    <div class="card card-w-title">
+      <h1>Units</h1>
+
+      <app-unit-list
+        (selectUnit)="navigateToUnit($event)"
+        [units]="units$|async"></app-unit-list>
+
+
+    </div>
+  </div>
+</div>
