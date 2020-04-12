@@ -46,13 +46,13 @@
       <div class="ui-g-12 ui-md-2">
         <p-inplace [closable]="unitType.value?.name!=null" [active]="editMode" [closeIcon]="'pi pi-check'">
                 <span pInplaceDisplay>
-                  {{unitType.value?.name}}
+                  {{unitType.value}}
                 </span>
 
           <span pInplaceContent>
             <p-dropdown [options]="unitTypes" formControlName="unitType"
                         [placeholder]="'Select Unit Type'"
-                        optionLabel="name"></p-dropdown>
+            ></p-dropdown>
           </span>
         </p-inplace>
       </div>
@@ -78,15 +78,17 @@
 
 
     <div class="center">
-      <button pButton type="submit" label="Save" class="ui-button-rounded p-align-center" (click)="saveUnitData()">
-
-      </button>
+      <span>
+        <button pButton type="button" label="Save" class="ui-button-rounded p-align-center" (click)="saveUnitData()">
+        </button>
+        <button *ngIf="unit?._id != null"
+                pButton type="button" label="Delete" class="ui-button-rounded ui-button-danger p-align-center"
+                (click)="deleteUnit()">
+        </button>
+      </span>
     </div>
 
 
   </div>
-  <pre>
-      {{unitForm.value|json}}
-    </pre>
 </div>
 

@@ -23,7 +23,15 @@ export class UnitsComponent implements OnInit {
   }
 
   navigateToUnit(unit: Unit) {
-    console.log(unit);
     this.router.navigate(['unit/' + unit._id]);
+  }
+
+  addNewUnit() {
+    this.router.navigate(['unit']);
+  }
+
+  deleteUnit(unit: Unit) {
+    this.unitService.delete(unit);
+
   }
 }

@@ -3,13 +3,13 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './components/app.component';
 import {StoreModule} from '@ngrx/store';
-import {UnitComponent} from './components/unit/unit.component';
+import {UnitDetailComponent} from './components/unit/unit-detail/unit-detail.component';
 import {RouterModule, Routes} from '@angular/router';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {InputTextModule} from 'primeng/inputtext';
 import {InplaceModule} from 'primeng/inplace';
 import {ReactiveFormsModule} from '@angular/forms';
-import {UnitFormComponent} from './components/unit/unit-form/unit-form.component';
+import {UnitFormComponent} from './components/unit/unit-detail/unit-form/unit-form.component';
 import {DropdownModule} from 'primeng/dropdown';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DefaultDataServiceConfig, EntityDataModule} from '@ngrx/data';
@@ -34,7 +34,11 @@ const ROUTES: Routes = [
   },
   {
     path: 'unit/:id',
-    component: UnitComponent
+    component: UnitDetailComponent
+  },
+  {
+    path: 'unit',
+    component: UnitDetailComponent
   },
   {
     path: '**',
@@ -53,7 +57,7 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    UnitComponent,
+    UnitDetailComponent,
     UnitFormComponent,
     UnitsComponent,
     UnitListComponent

@@ -1,17 +1,29 @@
 <p-dataView [value]="units" layout="grid">
+  <p-header>
+    <div class="ui-helper-clearfix">
+      <div class="ui-g">
+        <div class="ui-g-12 ui-md-offset-10 ui-md-2" style="text-align: right">
+          <button pButton type="button" label="Add New Unit" class="ui-button-rounded p-align-center"
+                  (click)="addNewUnit()">
+          </button>
+        </div>
+      </div>
+    </div>
+  </p-header>
+
+
   <ng-template let-unit pTemplate="gridItem">
     <div style="padding:.5em; cursor: pointer" class="ui-g-12 ui-md-3" (click)="clickUnit(unit)">
       <p-panel [header]="unit.name" [style]="{'text-align':'center'}">
         <div>{{unit.description}}</div>
-        <hr class="ui-widget-content" style="border-top:0">
+        <div style="text-align: right">
+          <span class="pi pi-trash" style="color: red" (click)="deleteUnit(unit); $event.stopPropagation()"></span>
+        </div>
       </p-panel>
     </div>
+
   </ng-template>
 </p-dataView>
 
-
-<pre>
-  {{units|json}}
-</pre>
 
 

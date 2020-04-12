@@ -5,8 +5,9 @@
 
       <app-unit-list
         (selectUnit)="navigateToUnit($event)"
-        [units]="units$|async"></app-unit-list>
-
+        (addNewUnitEmitter)="addNewUnit()"
+        (deleteUnitEmitter)="deleteUnit($event)"
+        [units]=" units$|async"></app-unit-list>
 
     </div>
   </div>

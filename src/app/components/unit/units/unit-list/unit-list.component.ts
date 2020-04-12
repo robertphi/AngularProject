@@ -14,6 +14,12 @@ export class UnitListComponent implements OnInit {
   @Output()
   selectUnit: EventEmitter<Unit> = new EventEmitter<Unit>();
 
+  @Output()
+  addNewUnitEmitter: EventEmitter<any> = new EventEmitter<any>();
+
+  @Output()
+  deleteUnitEmitter: EventEmitter<Unit> = new EventEmitter<Unit>();
+
   constructor() {
   }
 
@@ -22,5 +28,14 @@ export class UnitListComponent implements OnInit {
 
   clickUnit(unit: Unit) {
     this.selectUnit.emit(unit);
+  }
+
+  addNewUnit() {
+    this.addNewUnitEmitter.emit();
+
+  }
+
+  deleteUnit(unit: Unit) {
+    this.deleteUnitEmitter.emit(unit);
   }
 }
