@@ -1,0 +1,14 @@
+<div class="ui-g">
+  <div class="ui-g-12">
+    <div class="card card-w-title">
+      <h1>Characters</h1>
+
+      <app-character-list (addNewCharacterEmitter)="addNewCharacter()"
+                          (deleteCharacterEmitter)="deleteCharacter($event)"
+                          (selectCharacter)="navigateToCharacter($event)"
+                          [characters]="characters$|async"></app-character-list>
+
+
+    </div>
+  </div>
+</div>

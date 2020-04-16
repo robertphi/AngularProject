@@ -1,0 +1,13 @@
+<div class="ui-fluid">
+  <div class="ui-g">
+    <div class="ui-g-12">
+
+      <app-character-form [editMode]="!characterExists"
+                          [character]="characterExists?(character$|async):null"
+                          (deleteCharacterEmitter)="deleteCharacter($event)"
+                          (saveCharacterDetails)="saveCharacterDetails($event)"
+      ></app-character-form>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<p-dataView [value]="characters" layout="grid">
+  <p-header>
+    <div class="ui-helper-clearfix">
+      <div class="ui-g">
+        <div class="ui-g-12 ui-md-offset-10 ui-md-2" style="text-align: right">
+          <button pButton type="button" label="Add New Character" class="ui-button-rounded p-align-center"
+                  (click)="addNewCharacter()">
+          </button>
+        </div>
+      </div>
+    </div>
+  </p-header>
+
+
+  <ng-template let-character pTemplate="gridItem">
+    <div style="padding:.5em; cursor: pointer" class="ui-g-12 ui-md-3" (click)="clickCharacter(character)">
+      <p-panel [header]="character.name" [style]="{'text-align':'center'}">
+        <div>{{character.description}}</div>
+        <div style="text-align: right">
+          <span class="pi pi-trash" style="color: red"
+                (click)="deleteCharacter(character); $event.stopPropagation()"></span>
+        </div>
+      </p-panel>
+    </div>
+
+  </ng-template>
+</p-dataView>
+
+
+

@@ -20,6 +20,10 @@ import {UnitsComponent} from './components/unit/units/units.component';
 import {UnitListComponent} from './components/unit/units/unit-list/unit-list.component';
 import {DataViewModule} from 'primeng/dataview';
 import {PanelModule} from 'primeng/panel';
+import {CharactersComponent} from './components/character/characters/characters.component';
+import {CharacterDetailComponent} from './components/character/character-detail/character-detail.component';
+import {CharacterListComponent} from './components/character/characters/character-list/character-list.component';
+import {CharacterFormComponent} from './components/character/character-detail/character-form/character-form.component';
 
 
 const ROUTES: Routes = [
@@ -41,6 +45,18 @@ const ROUTES: Routes = [
     component: UnitDetailComponent
   },
   {
+    path: 'characters',
+    component: CharactersComponent
+  },
+  {
+    path: 'character/:id',
+    component: CharacterDetailComponent
+  },
+  {
+    path: 'character',
+    component: CharacterDetailComponent
+  },
+  {
     path: '**',
     redirectTo: 'units'
   },
@@ -60,7 +76,11 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
     UnitDetailComponent,
     UnitFormComponent,
     UnitsComponent,
-    UnitListComponent
+    UnitListComponent,
+    CharactersComponent,
+    CharacterDetailComponent,
+    CharacterListComponent,
+    CharacterFormComponent
   ],
   imports: [
     BrowserModule,

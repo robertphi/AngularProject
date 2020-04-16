@@ -1,4 +1,5 @@
 export class Character {
+  _id: string;
   name: string;
   imageUrl: string;
   description: string;
