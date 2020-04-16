@@ -2,9 +2,11 @@
   <div class="ui-g">
     <div class="ui-g-12">
 
+
       <app-unit-form [editMode]="!unitExists"
                      [unit]="unitExists?(unit$|async):null"
                      (deleteUnitEmitter)="deleteUnit($event)"
+                     (editImageEmitter)="openEditImageModal($event)"
                      (saveUnitDetails)="saveUnitDetails($event)"
       ></app-unit-form>
 

@@ -2,72 +2,84 @@
   <h1>Unit Details</h1>
   <div class="ui-g form-group">
 
-    <div class="ui-g-12 ui-md-12">
-      <div class="ui-g-12 ui-md-2">
-        <label>Unit Name</label>
-      </div>
-      <div class="ui-g-12 ui-md-10">
-        <p-inplace closable="closable" [active]="editMode" [closeIcon]="'pi pi-check'">
+    <div class="ui-g-12 ui-md-6">
+      <div class="ui-g-12 ui-md-12">
+        <div class="ui-g-12 ui-md-2">
+          <label>Unit Name</label>
+        </div>
+        <div class="ui-g-12 ui-md-10">
+          <p-inplace closable="closable" [active]="editMode" [closeIcon]="'pi pi-check'">
                 <span pInplaceDisplay>
                   {{name.value}}
                 </span>
 
-          <span pInplaceContent>
+            <span pInplaceContent>
                   <input type="text" formControlName="name" pInputText>
                 </span>
-        </p-inplace>
+          </p-inplace>
+        </div>
       </div>
-    </div>
 
 
-    <div class="ui-g-12 ui-md-12">
-      <div class="ui-g-12 ui-md-2">
-        <label>Description</label>
-      </div>
-      <div class="ui-g-12 ui-md-10">
-        <p-inplace closable="closable" [active]="editMode" [closeIcon]="'pi pi-check'">
+      <div class="ui-g-12 ui-md-12">
+        <div class="ui-g-12 ui-md-2">
+          <label>Description</label>
+        </div>
+        <div class="ui-g-12 ui-md-10">
+          <p-inplace closable="closable" [active]="editMode" [closeIcon]="'pi pi-check'">
                 <span pInplaceDisplay>
                   {{description.value}}
                 </span>
 
-          <span pInplaceContent>
+            <span pInplaceContent>
                   <textarea [rows]="3" [cols]="30" pInputTextarea formControlName="description"></textarea>
                 </span>
-        </p-inplace>
+          </p-inplace>
 
 
+        </div>
       </div>
-    </div>
 
-    <div class="ui-g-12 ui-md-12">
-      <div class="ui-g-12 ui-md-2">
-        <label>Unit Type</label>
-      </div>
-      <div class="ui-g-12 ui-md-2">
+      <div class="ui-g-12 ui-md-12">
+        <div class="ui-g-12 ui-md-2">
+          <label>Unit Type</label>
+        </div>
+        <div class="ui-g-12 ui-md-2">
           <span>
             <p-dropdown [options]="unitTypes" formControlName="unitType"
                         [placeholder]="'Select Unit Type'"
             ></p-dropdown>
           </span>
+        </div>
       </div>
-    </div>
 
 
-    <div class="ui-g-12 ui-md-12">
-      <div class="ui-g-12 ui-md-2">
-        <label>Battle Power</label>
-      </div>
-      <div class="ui-g-12 ui-md-2">
-        <p-inplace closable="closable" [active]="editMode" [closeIcon]="'pi pi-check'">
+      <div class="ui-g-12 ui-md-12">
+        <div class="ui-g-12 ui-md-2">
+          <label>Battle Power</label>
+        </div>
+        <div class="ui-g-12 ui-md-2">
+          <p-inplace closable="closable" [active]="editMode" [closeIcon]="'pi pi-check'">
                 <span pInplaceDisplay>
                   {{battlePower.value}}
                 </span>
 
-          <span pInplaceContent>
+            <span pInplaceContent>
                   <input type="number" formControlName="battlePower" [min]="5" [step]="5" pInputText>
           </span>
-        </p-inplace>
+          </p-inplace>
+        </div>
       </div>
+    </div>
+
+    <div class="ui-g-12 ui-md-6">
+      <button (click)="editImage()" class="img-edit
+      ui-button-warning
+      ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only"
+              icon="pi pi-pencil" pbutton="" type="button"><span aria-hidden="true"
+                                                                 class="ui-button-icon-left ui-clickable pi pi-pencil"></span><span
+        class="ui-button-text ui-clickable">ui-btn</span></button>
+      <img class="img" src="http://localhost:3000/images/characters/dog1.jpg"/>
     </div>
 
 

@@ -24,6 +24,11 @@ import {CharactersComponent} from './components/character/characters/characters.
 import {CharacterDetailComponent} from './components/character/character-detail/character-detail.component';
 import {CharacterListComponent} from './components/character/characters/character-list/character-list.component';
 import {CharacterFormComponent} from './components/character/character-detail/character-form/character-form.component';
+import {CommonModule} from '@angular/common';
+import {DynamicDialogModule} from 'primeng/dynamicdialog';
+import {ImageUploadModalComponent} from './components/image-upload-modal/image-upload-modal.component';
+import {ImageUploadFormComponent} from './components/image-upload-modal/image-upload-form/image-upload-form.component';
+import {CarouselModule} from 'primeng/carousel';
 
 
 const ROUTES: Routes = [
@@ -80,7 +85,9 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
     CharactersComponent,
     CharacterDetailComponent,
     CharacterListComponent,
-    CharacterFormComponent
+    CharacterFormComponent,
+    ImageUploadModalComponent,
+    ImageUploadFormComponent
   ],
   imports: [
     BrowserModule,
@@ -88,6 +95,8 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
     HttpClientModule,
     RouterModule.forRoot(ROUTES),
     StoreModule.forRoot({}, {}),
+    CommonModule,
+    DynamicDialogModule,
     ReactiveFormsModule,
     InputTextModule,
     InputTextareaModule,
@@ -97,7 +106,8 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
     EffectsModule.forRoot([]),
     EntityDataModule.forRoot(entityConfig),
     DataViewModule,
-    PanelModule
+    PanelModule,
+    CarouselModule
   ],
   providers: [
     [{provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig}]

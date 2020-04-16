@@ -22,6 +22,9 @@ export class UnitFormComponent implements OnInit, OnChanges {
   @Output()
   deleteUnitEmitter: EventEmitter<Unit> = new EventEmitter<Unit>();
 
+  @Output()
+  editImageEmitter: EventEmitter<Unit> = new EventEmitter<Unit>();
+
 
   unitTypes = [
     {label: 'Infantry', value: 'Infantry'},
@@ -62,7 +65,6 @@ export class UnitFormComponent implements OnInit, OnChanges {
   }
 
   saveUnitData() {
-    console.log(this.unitForm.value);
     this.saveUnitDetails.emit(this.unitForm.value);
   }
 
@@ -74,5 +76,9 @@ export class UnitFormComponent implements OnInit, OnChanges {
 
   deleteUnit() {
     this.deleteUnitEmitter.emit(this.unit);
+  }
+
+  editImage() {
+    this.editImageEmitter.emit(this.unit);
   }
 }

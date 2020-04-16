@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import {Character} from '../../../models/Character';
-import {CharacterService} from '../../../services/character.service';
+import {CharacterService} from '../../../services/Character.service';
 
 @Component({
   selector: 'app-characters',

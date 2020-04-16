@@ -1,0 +1,15 @@
+<div [formGroup]="form" style="height:400px">
+
+  <p-carousel [value]="images" orientation="vertical" circular="true" [numVisible]="1">
+    <ng-template let-image pTemplate="item">
+      <div>
+        <div class="p-grid p-nogutter">
+          <div class="p-col-12">
+            <img [src]="'http://localhost:3000/' + image" class="img"/>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
+
