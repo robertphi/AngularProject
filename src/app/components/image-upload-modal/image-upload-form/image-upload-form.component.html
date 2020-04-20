@@ -1,15 +1,38 @@
-<div [formGroup]="form" style="height:400px">
+<div [formGroup]="form" class="ui-grid" style="height:400px">
 
-  <p-carousel [value]="images" orientation="vertical" circular="true" [numVisible]="1">
-    <ng-template let-image pTemplate="item">
-      <div>
-        <div class="p-grid p-nogutter">
-          <div class="p-col-12">
-            <img [src]="'http://localhost:3000/' + image" class="img"/>
+  <div class="ui-g-12 ui-md-4">
+    <p-carousel [value]="images" orientation="vertical"
+                verticalViewPortHeight="275px"
+                circular="true" [numVisible]="1">
+      <ng-template let-image pTemplate="item">
+        <div style="padding-left: 35px; padding-top: 10px">
+          <div class="p-grid p-nogutter">
+            <div class="p-col-12">
+              <img [src]="'http://localhost:3000/' + image" class="img"/>
+            </div>
           </div>
         </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+
+  <div class="ui-g-12 ui-g-offset-1 ui-md-7 vl">
+    <div class="center-flex">
+      <div
+        (click)="uploadImage()"
+        style="background-color:gray; text-align: center;width: 50%; height: 50%; cursor: pointer">
+        <span class="folder-upload" pTooltip="Upload your own image"><i class="pi pi-upload"
+                                                                        style="font-size: 12vw"></i></span>
       </div>
-    </ng-template>
-  </p-carousel>
+
+    </div>
+
+
+  </div>
+
+  <div class="ui-g-12 ui-md-12" style="text-align: right">
+    <button pButton label="Save"></button>
+
+  </div>
 </div>
 

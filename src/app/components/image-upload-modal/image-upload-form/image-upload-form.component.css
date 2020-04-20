@@ -1,0 +1,17 @@
+.vl {
+  border-left: 2px solid silver;
+  height: 100%
+}
+
+.folder-upload {
+  height: 50%;
+  border: solid gray 5px;
+  background-color: gray;
+}
+
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px
+}

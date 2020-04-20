@@ -22,4 +22,7 @@ export class ImageUploadFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  uploadImage() {
+
+  }
 }

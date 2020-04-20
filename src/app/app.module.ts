@@ -29,6 +29,7 @@ import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import {ImageUploadModalComponent} from './components/image-upload-modal/image-upload-modal.component';
 import {ImageUploadFormComponent} from './components/image-upload-modal/image-upload-form/image-upload-form.component';
 import {CarouselModule} from 'primeng/carousel';
+import {TooltipModule} from 'primeng/tooltip';
 
 
 const ROUTES: Routes = [
@@ -107,7 +108,8 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
     EntityDataModule.forRoot(entityConfig),
     DataViewModule,
     PanelModule,
-    CarouselModule
+    CarouselModule,
+    TooltipModule
   ],
   providers: [
     [{provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig}]
