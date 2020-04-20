@@ -1,11 +1,12 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, Validators} from '@angular/forms';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {AbstractControl, FormBuilder, Validators} from '@angular/forms';
 import {Unit} from '../../../../models/Unit';
 
 @Component({
   selector: 'app-unit-form',
   templateUrl: './unit-form.component.html',
-  styleUrls: ['./unit-form.component.css']
+  styleUrls: ['./unit-form.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UnitFormComponent implements OnInit, OnChanges {
 
@@ -80,5 +81,9 @@ export class UnitFormComponent implements OnInit, OnChanges {
 
   editImage() {
     this.editImageEmitter.emit(this.unit);
+  }
+
+  getImageSrc() {
+    return 'http://localhost:3000/' + this?.unit?.image;
   }
 }

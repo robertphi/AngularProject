@@ -79,7 +79,7 @@
               icon="pi pi-pencil" pbutton="" type="button"><span aria-hidden="true"
                                                                  class="ui-button-icon-left ui-clickable pi pi-pencil"></span><span
         class="ui-button-text ui-clickable">ui-btn</span></button>
-      <img class="img" src="http://localhost:3000/images/characters/dog1.jpg"/>
+      <img *ngIf="unit?.image" class="img" [src]="getImageSrc()"/>
     </div>
 
 

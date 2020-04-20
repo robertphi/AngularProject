@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {CharacterService} from '../../services/Character.service';
-import {DynamicDialogConfig} from 'primeng/dynamicdialog';
+import {DynamicDialogConfig, DynamicDialogRef} from 'primeng/dynamicdialog';
 
 @Component({
   selector: 'app-image-upload-modal',
@@ -15,11 +15,14 @@ export class ImageUploadModalComponent implements OnInit {
   images$: Observable<string[]>;
 
 
-  constructor(private config: DynamicDialogConfig) {
+  constructor(private config: DynamicDialogConfig, private ref: DynamicDialogRef) {
   }
 
   ngOnInit(): void {
     this.images$ = this.config.data.images$;
   }
 
+  selectImage(imageUrl: string) {
+    this.ref.close(imageUrl);
+  }
 }

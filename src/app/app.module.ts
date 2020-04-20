@@ -30,6 +30,7 @@ import {ImageUploadModalComponent} from './components/image-upload-modal/image-u
 import {ImageUploadFormComponent} from './components/image-upload-modal/image-upload-form/image-upload-form.component';
 import {CarouselModule} from 'primeng/carousel';
 import {TooltipModule} from 'primeng/tooltip';
+import {FileUploadModule} from 'primeng/fileupload';
 
 
 const ROUTES: Routes = [
@@ -109,7 +110,8 @@ const defaultDataServiceConfig: DefaultDataServiceConfig = {
     DataViewModule,
     PanelModule,
     CarouselModule,
-    TooltipModule
+    TooltipModule,
+    FileUploadModule
   ],
   providers: [
     [{provide: DefaultDataServiceConfig, useValue: defaultDataServiceConfig}]

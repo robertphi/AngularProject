@@ -1,4 +1,4 @@
-<app-image-upload-form [images]="images$|async">
+<app-image-upload-form [images]="images$|async" (selectedImageEmit)="selectImage($event)">
 
 </app-image-upload-form>
 

@@ -1,7 +1,8 @@
 <div [formGroup]="form" class="ui-grid" style="height:400px">
 
   <div class="ui-g-12 ui-md-4">
-    <p-carousel [value]="images" orientation="vertical"
+    <p-carousel [value]="images" orientation="vertical" [page]="pageNumber"
+                (onPage)="pageNumber=$event.page"
                 verticalViewPortHeight="275px"
                 circular="true" [numVisible]="1">
       <ng-template let-image pTemplate="item">
@@ -18,12 +19,9 @@
 
   <div class="ui-g-12 ui-g-offset-1 ui-md-7 vl">
     <div class="center-flex">
-      <div
-        (click)="uploadImage()"
-        style="background-color:gray; text-align: center;width: 50%; height: 50%; cursor: pointer">
-        <span class="folder-upload" pTooltip="Upload your own image"><i class="pi pi-upload"
-                                                                        style="font-size: 12vw"></i></span>
-      </div>
+
+      <p-fileUpload name="image" (onUpload)="updateImage($event)"
+                    [url]="uploadUrl"></p-fileUpload>
 
     </div>
 
@@ -31,7 +29,7 @@
   </div>
 
   <div class="ui-g-12 ui-md-12" style="text-align: right">
-    <button pButton label="Save"></button>
+    <button pButton label="OK" (click)="updateItemImage()"></button>
 
   </div>
 </div>
